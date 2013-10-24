@@ -5,6 +5,14 @@ class RecordsController < ApplicationController
   end
   def new
     @players = RegisteredPlayer.all
+
+    @players.each do |player|
+      player.winning_pct = @games.where(winner: player.name).count / ( @games.where(winner: player.name).count + @games.where(loser: player.name).count )
+      player.save
+    end
+
+    @players = @players.sort_by &:winning_pct
+
     @game = Game.new
   end
   def create
