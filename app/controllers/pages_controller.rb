@@ -6,7 +6,7 @@ class PagesController < ApplicationController
   end
   def submit_registration
     @player = RegisteredPlayer.create(params[:registered_player])
-    RegistrationMailer.new_user_email(@player)
+    RegistrationMailer.new_user_email(@player).deliver
   end
   def constitution
   end
