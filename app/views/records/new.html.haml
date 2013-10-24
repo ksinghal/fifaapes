@@ -5,7 +5,7 @@
   .span4.colored
     %h3
       Add New Match Record
-    = form_for @game, url: record_path do |f|
+    = form_for @game, url: url_for(controller: "records", action: "create") do |f|
       = f.select :winner, options_from_collection_for_select(@players, 'name', 'name')
       %br/
       = f.select :loser, options_from_collection_for_select(@players, 'name', 'name')

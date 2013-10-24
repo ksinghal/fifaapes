@@ -9,8 +9,14 @@ class RecordsController < ApplicationController
   end
   def create
     @game = Game.create(params[:game])
+
     @score = "#{@game.winning_score} - #{@game.losing_score}"
-    RegistrationMailer.loser_email(@game.winner, @game.loser, @score).deliver
+    @loser = RegisteredPlayer.where(name: @game.loser).first
+    @winner = RegisteredPlayer.where(name: @game.winner).first
+
+    RegistrationMailer.loser_email(@winner, @loser, @score).deliver
+
+    redirect_to records_path
   end
   def destroy
   end

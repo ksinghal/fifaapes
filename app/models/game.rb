@@ -1,3 +1,3 @@
 class Game < ActiveRecord::Base
-  attr_accessible :losing_score, :winner, :winning_score
+  attr_accessible :losing_score, :winner, :loser, :winning_score
 end
