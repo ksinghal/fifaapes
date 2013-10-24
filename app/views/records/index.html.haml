@@ -11,16 +11,12 @@
             %th
               Name
             %th
-              Email
-            %th
               Personal Record (W-L)
           %tbody
             - @players.each do |player|
               %tr
                 %td
                   = player.name
-                %td
-                  = player.email
                 %td
                   = "#{@games.where(winner: player.name).count} - #{@games.where(loser: player.name).count}"
   .span6
