@@ -9,7 +9,6 @@ class RecordsController < ApplicationController
     @players.each do |player|
       if (( @games.where(winner: player.name).count + @games.where(loser: player.name).count ) <= 0)
         player.winning_pct = 0
-      end
       else
         player.winning_pct = @games.where(winner: player.name).count / ( @games.where(winner: player.name).count + @games.where(loser: player.name).count )
       end
