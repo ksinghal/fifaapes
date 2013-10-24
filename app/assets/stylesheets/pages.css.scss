@@ -1,0 +1,42 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.brand {
+  color: white !important;
+}
+
+.spacer {
+  height: 55px;
+  width: 100%;
+}
+
+.bodybackground { 
+  background: url(fifabackground.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.apelogo {
+  width: 200px;
+  height: 70px;
+}
+
+.signupbutton {
+  position: absolute;
+  top: 650px;
+  width: 100%;
+  text-align: center;
+}
+
+.btn {
+  margin-right: 40px;
+}
+
+audio {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}

@@ -1,0 +1,20 @@
+.spacer
+.row-fluid
+  .span2
+  .span8
+    .hero-unit
+      %h1
+        FIFA Apes Registration
+      %h3
+        Please read the
+        = link_to "constitution", root_url
+        before signing up
+      = form_for @player, :url => {:controller => "pages", :action => "sign_up"}, :html => {:method => :post} do |f|
+        = f.label "Name"
+        = f.text_field :name, minlength: '2'
+        %br/
+        = f.label "Email"
+        = f.email_field :email
+        %br/
+        = f.submit "Submit", :value => "Submit Registration for Review", :class => "btn btn-success"
+  .span2

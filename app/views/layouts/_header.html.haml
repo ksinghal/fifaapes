@@ -1,0 +1,27 @@
+.navbar.navbar-fixed-top.navbar-inverse
+  .navbar-inner
+    .container
+      %button.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse", type: "button"}
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.brand{href: "#{url_for :controller=>'/pages', :action=>'index'}"} FIFA Apes
+      .nav-collapse.collapse
+        %ul.nav
+          %li.divider-vertical
+          %li
+            = link_to "Sign Up", signup_path
+          %li.divider-vertical
+          %li
+            %a Records
+          %li.divider-vertical
+          %li
+            = link_to "Constitution", constitution_path
+.spacer
+- if params[:action] != "constitution"
+  .row-fluid
+    .span3
+    .span3
+    .span3
+    .span3
+      %img{"src" => "assets/aepi.png", "class" => "apelogo"}
