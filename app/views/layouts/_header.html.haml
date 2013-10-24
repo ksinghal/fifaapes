@@ -13,12 +13,12 @@
             = link_to "Sign Up", signup_path
           %li.divider-vertical
           %li
-            %a Records
+            = link_to "Records", records_path
           %li.divider-vertical
           %li
             = link_to "Constitution", constitution_path
 .spacer
-- if params[:action] != "constitution"
+- if params[:action] == "index" && params[:controller] == "pages"
   .row-fluid
     .span3
     .span3

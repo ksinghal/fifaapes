@@ -2,12 +2,12 @@
 .row-fluid
   .span2
   .span8
-    .hero-unit
+    .hero-unit.colored
       %h1
         FIFA Apes Registration
       %h3
         Please read the
-        = link_to "constitution", root_url
+        = link_to "constitution", constitution_path
         before signing up
       = form_for @player, :url => {:controller => "pages", :action => "sign_up"}, :html => {:method => :post} do |f|
         = f.label "Name"

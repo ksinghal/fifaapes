@@ -41,7 +41,7 @@ group :assets do
 end
 
 group :test, :development do 
-  gem 'pg'
+  gem 'sqlite3'
   gem 'rspec-rails',              '~> 2.10' 
   gem 'guard-rspec',              '~> 0.5' 
   gem 'guard-spork',              '~> 0.3' 

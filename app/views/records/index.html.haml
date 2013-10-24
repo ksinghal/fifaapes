@@ -1,0 +1,54 @@
+.spacer
+.row-fluid.coloredrow
+  .span6
+    .hero-unit
+      %h1 Current Players
+      %br/
+      %br/
+      %table.table.table-hover.table-condensed
+        %thead
+          %tr
+            %th
+              Name
+            %th
+              Email
+            %th
+              Personal Record (W-L)
+          %tbody
+            - @players.each do |player|
+              %tr
+                %td
+                  = player.name
+                %td
+                  = player.email
+                %td
+                  = "#{@games.where(winner: player.name).count} - #{@games.where(loser: player.name).count}"
+  .span6
+    .hero-unit
+      %h1 Match Records
+      %br/
+      %br/
+      %table.table.table-hover.table-condensed
+        %thead
+          %tr
+            %th
+              Winner
+            %th
+              Loser
+            %th
+              Score
+          %tbody
+            - @games.each do |game|
+              %tr
+                %td
+                  = game.winner
+                %td
+                  = game.loser
+                %td
+                  = "#{game.winning_score} - #{game.losing_score}"
+
+            %tr
+              %td
+                = link_to "Add new record", new_record_path
+              %td
+              %td

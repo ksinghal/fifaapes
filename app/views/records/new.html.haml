@@ -1,0 +1,18 @@
+.spacer
+.spacer
+.row-fluid
+  .span4
+  .span4.colored
+    %h3
+      Add New Match Record
+    = form_for @game, url: new_record_path do |f|
+      = f.select :winner, options_from_collection_for_select(@players, 'name', 'name')
+      %br/
+      = f.select :loser, options_from_collection_for_select(@players, 'name', 'name')
+      %br/
+      = f.text_field :winning_score, placeholder: "Winning Score"
+      %br/
+      = f.text_field :losing_score, placeholder: "Losing Score"
+      %br/
+      = f.submit "Add new Record", class: "btn btn-success"
+  .span4
