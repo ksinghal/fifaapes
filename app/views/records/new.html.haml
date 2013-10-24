@@ -10,9 +10,9 @@
       %br/
       = f.select :loser, options_from_collection_for_select(@players, 'name', 'name')
       %br/
-      = f.text_field :winning_score, placeholder: "Winning Score"
+      = f.number_field :winning_score, placeholder: "Winning Score"
       %br/
-      = f.text_field :losing_score, placeholder: "Losing Score"
+      = f.number_field :losing_score, placeholder: "Losing Score"
       %br/
       = f.submit "Add new Record", class: "btn btn-success"
   .span4
