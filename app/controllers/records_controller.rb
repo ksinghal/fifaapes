@@ -7,7 +7,7 @@ class RecordsController < ApplicationController
         player.winning_pct = 0
         puts "WINNING PCT IS 0 BECAUSE NO GAMES PLAYED!!!"
       else
-        player.winning_pct = Game.where(winner: player.name).count / ( Game.where(winner: player.name).count + Game.where(loser: player.name).count )
+        player.winning_pct = Game.where(winner: player.name).count.to_f / ( Game.where(winner: player.name).count + Game.where(loser: player.name).count )
         puts "WINNING PCT IS NOW LOGGED SUCCESS!!!"
       end
       player.save
