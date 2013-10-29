@@ -6,16 +6,14 @@ class RecordsController < ApplicationController
   def new
     @players = RegisteredPlayer.all
 
-    # @players.each do |player|
-    #   if (( @games.where(winner: player.name).count + @games.where(loser: player.name).count ) <= 0)
-    #     player.winning_pct = 0
-    #   else
-    #     player.winning_pct = @games.where(winner: player.name).count / ( @games.where(winner: player.name).count + @games.where(loser: player.name).count )
-    #   end
-    #   player.save
-    # end
-
-    # @players = @players.sort_by &:winning_pct
+    @players.each do |player|
+      if (( @games.where(winner: player.name).count + @games.where(loser: player.name).count ) <= 0)
+        player.winning_pct = 0
+      else
+        player.winning_pct = @games.where(winner: player.name).count / ( @games.where(winner: player.name).count + @games.where(loser: player.name).count )
+      end
+      player.save
+    end
 
     @game = Game.new
   end
