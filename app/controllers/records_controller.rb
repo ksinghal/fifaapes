@@ -1,14 +1,12 @@
 class RecordsController < ApplicationController
   def index
     @players = RegisteredPlayer.scoped
-    @games = Game.all
     @players.each do |player|
-      if (( @games.where(winner: player.name).count + @games.where(loser: player.name).count ) <= 0)
+      if (( Game.where(winner: player.name).count + Game.where(loser: player.name).count ) <= 0)
         player.winning_pct = 0
         puts "WINNING PCT IS 0 BECAUSE NO GAMES PLAYED!!!"
       else
-        player.winning_pct = @games.where(winner: player.name).count / ( @games.where(winner: player.name).count + @games.where(loser: player.name).count )
-
+        player.winning_pct = Game.where(winner: player.name).count / ( Game.where(winner: player.name).count + Game.where(loser: player.name).count )
         puts "WINNING PCT IS NOW LOGGED SUCCESS!!!"
       end
       player.save
