@@ -5,7 +5,7 @@ class RecordsController < ApplicationController
   end
   def new
     @players = RegisteredPlayer.all
-
+    @games = Game.all
     @players.each do |player|
       if (( @games.where(winner: player.name).count + @games.where(loser: player.name).count ) <= 0)
         player.winning_pct = 0
