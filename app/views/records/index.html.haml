@@ -22,7 +22,7 @@
                 %td
                   = "#{@games.where(winner: player.name).count} - #{@games.where(loser: player.name).count}"
                 %td
-                  = playher.winning_pct
+                  = player.winning_pct
   .span6
     .hero-unit
       %h1 Match Records
