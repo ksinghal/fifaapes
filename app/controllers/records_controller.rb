@@ -1,6 +1,12 @@
 class RecordsController < ApplicationController
   def index
     @players = RegisteredPlayer.scoped
+    end
+  end
+  def new
+    @players = RegisteredPlayer.all
+    @game = Game.new
+    
     @games = Game.scoped
     @players.each do |player|
       if (( Game.where(winner: player.name).count + Game.where(loser: player.name).count ) <= 0)
@@ -11,11 +17,6 @@ class RecordsController < ApplicationController
         puts "WINNING PCT IS NOW LOGGED SUCCESS!!!"
       end
       player.save
-    end
-  end
-  def new
-    @players = RegisteredPlayer.all
-    @game = Game.new
   end
   def create
     @game = Game.create(params[:game])

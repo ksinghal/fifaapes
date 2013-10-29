@@ -12,6 +12,8 @@
               Name
             %th
               Personal Record (W-L)
+            %th
+              Winning Percentage
           %tbody
             - @players.each do |player|
               %tr
@@ -19,6 +21,8 @@
                   = player.name
                 %td
                   = "#{@games.where(winner: player.name).count} - #{@games.where(loser: player.name).count}"
+                %td
+                  = playher.winning_pct
   .span6
     .hero-unit
       %h1 Match Records
