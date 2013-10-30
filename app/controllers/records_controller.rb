@@ -1,6 +1,7 @@
 class RecordsController < ApplicationController
   def index
     @players = RegisteredPlayer.order("winning_pct DESC").all
+    end
   end
   def new
     @players = RegisteredPlayer.all
