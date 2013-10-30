@@ -29,7 +29,7 @@
                 %td
                   = ((player.winning_pct * 100) * 10).round / 10.0
                   = "%"
-                - @counter++
+                - @counter = @counter + 1
   .span5
     .hero-unit
       %h1 Match Records
