@@ -22,7 +22,7 @@
                 %td
                   = "#{Game.where(winner: player.name).count} - #{Game.where(loser: player.name).count}"
                 %td
-                  = player.winning_pct * 100
+                  = ((player.winning_pct * 100) * 10).round / 10.0
                   = "%"
   .span6
     .hero-unit
