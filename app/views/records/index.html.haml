@@ -39,7 +39,7 @@
             %th
               Score
           %tbody
-            - @games.each do |game|
+            - Game.scoped.each do |game|
               %tr
                 %td
                   = game.winner
