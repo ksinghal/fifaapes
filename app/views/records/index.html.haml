@@ -9,14 +9,19 @@
         %thead
           %tr
             %th
+              Seed
+            %th
               Name
             %th
               Personal Record (W-L)
             %th
               Winning Percentage
           %tbody
+            - @counter = 0
             - @players.each do |player|
               %tr
+                %td
+                  = @counter
                 %td
                   = player.name
                 %td
@@ -24,6 +29,7 @@
                 %td
                   = ((player.winning_pct * 100) * 10).round / 10.0
                   = "%"
+                - @counter++
   .span5
     .hero-unit
       %h1 Match Records
