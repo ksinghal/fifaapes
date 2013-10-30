@@ -20,13 +20,13 @@
             - @counter = 1
             - @players.each do |player|
               %tr
-                %td
+                %td.centeredtext
                   = @counter
                 %td
                   = player.name
-                %td
+                %td.centeredtext
                   = "#{Game.where(winner: player.name).count} - #{Game.where(loser: player.name).count}"
-                %td
+                %td.centeredtext
                   = ((player.winning_pct * 100) * 10).round / 10.0
                   = "%"
                 - @counter = @counter + 1
@@ -51,7 +51,7 @@
                   = game.winner
                 %td
                   = game.loser
-                %td
+                %td.centeredtext
                   = "#{game.winning_score} - #{game.losing_score}"
 
             %tr
