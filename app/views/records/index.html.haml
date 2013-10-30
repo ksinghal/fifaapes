@@ -20,7 +20,7 @@
                 %td
                   = player.name
                 %td
-                  = "#{@games.where(winner: player.name).count} - #{@games.where(loser: player.name).count}"
+                  = "#{Game.where(winner: player.name).count} - #{Game.where(loser: player.name).count}"
                 %td
                   = player.winning_pct * 100
                   = "%"
