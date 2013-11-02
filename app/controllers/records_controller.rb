@@ -1,7 +1,6 @@
 class RecordsController < ApplicationController
   def index
     @players = RegisteredPlayer.order("winning_pct DESC").all
-    end
   end
   def new
     @players = RegisteredPlayer.all
@@ -17,6 +16,7 @@ class RecordsController < ApplicationController
         puts "WINNING PCT IS NOW LOGGED SUCCESS!!!"
       end
       player.save
+    end
   end
   def create
     @game = Game.create(params[:game])
