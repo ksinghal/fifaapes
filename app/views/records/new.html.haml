@@ -6,15 +6,17 @@
     %h3
       Add New Match Record
     = form_for @game, url: url_for(controller: "records", action: "create") do |f|
-      = f.label "Winner"
-      = f.select :winner, options_from_collection_for_select(@players, 'name', 'name')
-      %br/
-      = f.label "Loser"
-      = f.select :loser, options_from_collection_for_select(@players, 'name', 'name')
-      %br/
-      = f.number_field :winning_score, placeholder: "Winning Score"
-      %br/
-      = f.number_field :losing_score, placeholder: "Losing Score"
-      %br/
-      = f.submit "Add new Record", class: "btn btn-success"
+      .row-fluid
+        .span6
+          = f.label "Winner"
+          = f.select :winner, options_from_collection_for_select(@players, 'name', 'name')
+          %br/
+          = f.number_field :winning_score, placeholder: "Winning Score"
+        .span6
+          = f.label "Loser"
+          = f.select :loser, options_from_collection_for_select(@players, 'name', 'name')
+          %br/
+          = f.number_field :losing_score, placeholder: "Losing Score"
+      .row-fluid
+        = f.submit "Add new Record", class: "btn btn-success"
   .span4
