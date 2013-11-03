@@ -1,8 +1,8 @@
 .spacer
 .spacer
 .row-fluid
-  .span4
-  .span4.colored
+  .span2
+  .span8.colored
     %h3
       Add New Match Record
     = form_for @game, url: url_for(controller: "records", action: "create") do |f|
@@ -19,4 +19,4 @@
           = f.number_field :losing_score, placeholder: "Losing Score"
       .row-fluid
         = f.submit "Add new Record", class: "btn btn-success"
-  .span4
+  .span2
